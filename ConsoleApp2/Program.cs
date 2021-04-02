@@ -10,7 +10,7 @@ namespace ConsoleApp2
         static void Main(string[] args)
         {
             List<int> uniqueNoList = new List<int>();
-            uniqueNoList = UniqueRandomNoList(10000, 10000);
+            uniqueNoList = UniqueRandomNoList(10, 10);
             foreach (int no in uniqueNoList)
             {
                 Console.WriteLine(no);
@@ -24,17 +24,18 @@ namespace ConsoleApp2
             int count = 0;
             Random r = new Random();
             List<int> listRange = new List<int>();
-            for (int i = 0; i < totalRandomnoCount; i++)
+            for (int i = 1; i <= totalRandomnoCount; i++)
             {
                 listRange.Add(i);
             }
             while (listRange.Count > 0)
             {
-                int item = r.Next(maxRange);// listRange[];    
+                int item = r.Next(1,maxRange+1);// listRange[];
+                //Console.WriteLine(listRange[0]);
                 if (!noList.Contains(item) && listRange.Count > 0)
                 {
                     noList.Add(item);
-                    listRange.Remove(count);
+                    listRange.Remove(item);
                     count++;
                 }
             }
