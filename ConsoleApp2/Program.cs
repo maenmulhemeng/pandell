@@ -15,7 +15,7 @@ namespace ConsoleApp2
             List<int> uniquechosenNumbers = UniqueRandomchosenNumbers(10000, 10000);
             
             // Then let's print them
-            foreach (int no in uniquechosenNumbers.Keys)
+            foreach (int no in uniquechosenNumbers)
             {
                 Console.WriteLine(no);
             }
