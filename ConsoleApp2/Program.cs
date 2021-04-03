@@ -1,7 +1,7 @@
 ﻿using System;
 using ConsoleApp2.Models;
 using System.Collections.Generic;
-using System.Collections;
+using System.Linq;
 
 namespace ConsoleApp2
 {
@@ -12,7 +12,7 @@ namespace ConsoleApp2
         static void Main(string[] args)
         {
             // Let's generate the numbers
-            Dictionary<int, int> uniquechosenNumbers = UniqueRandomchosenNumbers(10000, 10000);
+            List<int> uniquechosenNumbers = UniqueRandomchosenNumbers(10000, 10000);
             
             // Then let's print them
             foreach (int no in uniquechosenNumbers.Keys)
@@ -21,7 +21,7 @@ namespace ConsoleApp2
             }
             Console.ReadLine();
         }
-        public static Dictionary<int, int> UniqueRandomchosenNumbers(int maxRange, int totalRandomnoCount)
+        public static List<int> UniqueRandomchosenNumbers(int maxRange, int totalRandomnoCount)
         {
             // List holds the previous chosen numbers in a dictionary so we can retrieve the calues in O(1)
             Dictionary<int, int> chosenNumbers = new Dictionary<int, int>();
@@ -47,7 +47,7 @@ namespace ConsoleApp2
                     listRange.Remove(item);
                 }
             }
-            return chosenNumbers;
+            return chosenNumbers.Keys.ToList();
         }
     }
 }
