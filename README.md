@@ -4,7 +4,7 @@ Please write a program that generates a list of 10,000 numbers in random order e
 Job interview (Random numbers)  
 # The algorithm 
 
-let's iterate untile we generate 10000 nnumber. In each iteration let's first generate a random number and then check wheather this number has been already chosen during previous steps or not. If the number is a new number so we add it to the chosenNumber dictionary and then we increase the counter by 1 and The core piece of code is.  
+let's iterate until we generate 10000 nnumbers  O(n). In each iteration let's first generate a random number and then check wheather this number has been already chosen during previous steps or not by O(1) using a dictionary. If the number is a new number so we add it to the chosenNumber dictionary and then we increase the counter by 1 and The core piece of code is.  
 ```
   int counter = 0;
 
